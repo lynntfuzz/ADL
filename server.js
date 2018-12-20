@@ -4,9 +4,9 @@ const express        = require('express');
 const path           = require('path');
 const logger         = require('morgan');
 const bodyParser     = require('body-parser');
-//const session        = require('express-session'); 
-//const passport 			 = require("./config/passport");
-//const config				 = require("./config/extra-config");
+const session        = require('express-session'); 
+const passport 			 = require("./config/passport");
+const config				 = require("./config/extra-config");
 // Express settings
 // ================
 
@@ -26,8 +26,8 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-//const isAuth 				 = require("./config/middleware/isAuthenticated");
-//const authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
+const isAuth 				 = require("./config/middleware/isAuthenticated");
+const authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));

@@ -16,20 +16,21 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-
     // Need to figure out proper data type and validation for this field
     phone: {
         type: DataTypes.STRING,
         allowNull: true
-        // validate: {
-        //     isPhone: true
-        // }
     },
-    isRegistered: {
-        type: DataTypes.BOOLEAN 
-    }
+    // info contact entered i.e., what kind of house they are looking for, what they want
+    info: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
   
+    isRegistered: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    }
 });
-
   return Contact;
 };
