@@ -15,9 +15,11 @@ $(document).ready(function() {
       }
     });
 
-    $("#widget-iframe").contents().$(".search-button").on("click", function(){
-      console.log("meow")
-    })
+    $("#search-button").on("click", function(){
+      $("#widget-modal").modal({keyboard: true});
+      $("#widget-modal").modal("show")
+  })
+
 
     $("#advanced-button").on("click", function(){
         $("#widget-modal").modal({keyboard: true});
