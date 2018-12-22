@@ -61,6 +61,39 @@
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
+              {{!-- row 0 --}}
+              <div class="form-row advanced search" id="form-row-0">
+                <div class="py-2 col-12 col-md-7 mb-2 mb-md-0">
+                  <h3 class="text-left">Country</h3>
+                </div>
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">Region</h3>
+                </div>    
+              </div>
+              
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="Country">
+                </div>                
+                <div class="py-2 col-12 col-md-2">
+                </div>
+                <div class="py-2 col-12 col-md-5">
+                  <input type="text" class="form-control form-control-lg" placeholder="Region">
+                </div>
+              </div>
+              {{!-- row 1 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">City</h3>                  
+                </div>
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">
+                  <h3>-or-</h3>
+                </div>
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">Zip Code</h3>
+                </div>                                
+              </div>
+
               <div class="form-row">
                 <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
                   <input type="text" class="form-control form-control-lg" placeholder="City">
@@ -68,35 +101,60 @@
                 <div class="py-2 col-12 col-md-2">
                 </div>
                 <div class="py-2 col-12 col-md-5">
-                  <h2>Price Range:</h2>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
-                  <h2>-or-</h2>
-                </div>                
-                <div class="py-2 col-12 col-md-2">
-                </div>
-                <div class="py-2 col-12 col-md-5">
-                  <input type="number" class="form-control form-control-lg" placeholder="Min">
-                </div>
-              </div>
-              <div class="form-row">
-                
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Zip Code">
-                </div>                
-                <div class="py-2 col-12 col-md-3">
                 </div>
-                <div class="py-2 col-12 col-md-5">
-                  <input type="number" class="form-control form-control-lg" placeholder="Max">
+              </div>
+              {{!-- row 2 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Property Type</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">                  
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="Property Type">
+                </div>
+              </div>
+              {{!-- row 3 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Year Built</h3>
+                </div>
+              </div>
+              <div class="form-row">                
+                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="From">
+                </div>                
+                <div class="py-2 col-12 col-md-6">
+                  <input type="number" class="form-control form-control-lg" placeholder="To">
+                </div>
+              </div>
+              {{!-- row 4 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                  <h3 class="text-left">Bedrooms</h3>
+                </div>
+                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                  <h3 class="text-left">Bathrooms</h3>
+                </div>
+              </div>
+              <div class="form-row">                
+                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Any">
+                </div>                
+                <div class="py-2 col-12 col-md-6">
+                  <input type="number" class="form-control form-control-lg" placeholder="Any">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">                  
                 </div>
                 <div class="py-2 col-12 col-md-4">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Search!</button>
+                  <button type="submit" class="btn btn-block btn-lg" id="advanced-button">Advanced Search</button>
+                </div>
+                <div class="py-2 col-12 col-md-4">
+                  <button type="submit" class="btn btn-block btn-lg btn-primary" id="search-button">Search!</button>
                 </div>
               </div>
             </form>
@@ -104,6 +162,11 @@
         </div>
       </div>
     </header>
+
+    {{!-- Search Modal --}}
+    <div class="modal" id="widget-modal">
+      <iframe id="widget-iframe" src="http://widget.proxiopro.com/CRMLS/PropertyResult.aspx"></iframe>
+    </div>
 
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">

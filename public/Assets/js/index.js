@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    //Changes navbar when scrolling
     $(window).scroll(function() {
       if ($(document).scrollTop() > 300) {
         $("#navbar-row-0").show("slow");
@@ -12,4 +14,14 @@ $(document).ready(function() {
         $("#navbar-row-3").show();
       }
     });
+
+    $("#widget-iframe").contents().$(".search-button").on("click", function(){
+      console.log("meow")
+    })
+
+    $("#advanced-button").on("click", function(){
+        $("#widget-modal").modal({keyboard: true});
+        $("#widget-modal").modal("show")
+    })
+
   });
