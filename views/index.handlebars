@@ -1,27 +1,450 @@
 <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <nav class="navbar navbar-light bg-light sticky-top">
+      <div class="container" id="navbar-row-0">
+        <ul class="nav nav-pills nav-fill" id="navbar-list">
+          <li class="nav-item">
+            <img src="Assets/img/138098_3302018123217PM60571.png">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home Search</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="container" id="navbar-row-1">
+        <a class="navbar-brand" href="#">Ginni Lee</a>
         <a class="btn btn-primary" href="#">Sign In</a>
+      </div>
+      <div class="justify-content-center container justify-content-between" id="navbar-row-2">
+        <img src="Assets/img/138098_3302018123217PM60571.png">
+        <img src="Assets/img/138098_3302018123217PM60571.png">
+      </div>
+      <div class="container" id="navbar-row-3">
+        <ul class="nav nav-pills nav-fill" id="navbar-list">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home Search</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <!-- Masthead -->
     <header class="masthead text-white text-center">
       <div class="overlay"></div>
-      <div class="container">
+      {{!-- basic search --}}
+      <div class="container basic-search">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+            <h1 class="mb-5">Do a quick search now!</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">City</h3>
                 </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">
+                  <h3>-or-</h3>
+                </div>
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">Zip Code</h3>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="City" id="basic-city">
+                </div>
+                <div class="py-2 col-12 col-md-2">
+                </div>
+                <div class="py-2 col-12 col-md-5">
+                  <input type="text" class="form-control form-control-lg" placeholder="Zip Code" id="basic-zip" maxlength="5">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Price</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="basic-min-val">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="basic-max-val">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="basic-unit-val">
+                    <option selected="selected" value="490">USD</option>
+                    <option value="492">EUR</option>
+                    <option value="524">GBP</option>
+                    <option value="1948">MXN</option>
+                    <option value="1949">CAD</option>
+                    <option value="1953">ARS</option>
+                    <option value="1954">BZD</option>
+                    <option value="1955">BRL</option>
+                    <option value="1956">CLP</option>
+                    <option value="1957">CRC</option>
+                    <option value="1958">PEN</option>
+                    <option value="1959">VEF</option>
+                    <option value="1960">MAD</option>
+                    <option value="1961">ILS</option>
+                    <option value="1962">ZAR</option>
+                    <option value="1963">NZD</option>
+                    <option value="1964">AUD</option>
+                    <option value="1965">CHF</option>
+                    <option value="1966">DKK</option>
+                    <option value="1967">HUF</option>
+                    <option value="1968">NOK</option>
+                    <option value="1969">RUB</option>
+                    <option value="1970">SEK</option>
+                    <option value="1989">PHP</option>
+                    <option value="2332">INR</option>
+                    <option value="2333">CZK</option>
+                    <option value="2334">HKD</option>
+                    <option value="2335">PLN</option>
+                    <option value="2493">AED</option>
+                    <option value="2494">AFN</option>
+                    <option value="2495">BBD</option>
+                    <option value="2496">BMD</option>
+                    <option value="2497">BSD</option>
+                    <option value="2498">BWP</option>
+                    <option value="2499">CNY</option>
+                    <option value="2500">COP</option>
+                    <option value="2501">DOP</option>
+                    <option value="2502">ISK</option>
+                    <option value="2503">KES</option>
+                    <option value="2504">KYD</option>
+                    <option value="2505">MKD</option>
+                    <option value="2506">MYR</option>
+                    <option value="2507">PAB</option>
+                    <option value="2508">RWF</option>
+                    <option value="2509">SGD</option>
+                    <option value="2510">THB</option>
+                    <option value="2512">UGX</option>
+                    <option value="2513">UYU</option>
+                    <option value="2514">UZS</option>
+                    <option value="2515">VND</option>
+                    <option value="2516">VUV</option>
+                    <option value="2517">XCD</option>
+                    <option value="2518">ZWL</option>
+                    <option value="2975">XPF</option>
+                    <option value="2976">TRY</option>
+                    <option value="2989">IDR</option>
+                    <option value="2990">JPY</option>
+                    <option value="2992">BGN</option>
+                    <option value="2993">TWD</option>
+                    <option value="2994">KRW</option>
+                    <option value="2995">EGP</option>
+                    <option value="2996">RON</option>
+                    <option value="2997">SAR</option>
+                    <option value="2998">PKR</option>
+                    <option value="2999">IQD</option>
+                    <option value="3000">FJD</option>
+                    <option value="3001">KWD</option>
+                    <option value="3002">BAM</option>
+                    <option value="3003">HRK</option>
+                    <option value="3004">JMD</option>
+                    <option value="3005">JOD</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0"></div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <button type="button" class="btn btn-block btn-lg" id="advanced-button">Advanced Search</button>
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <button type="button" class="btn btn-block btn-lg btn-primary" id="basic-search-button">Search!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {{!-- advanced-search --}}
+      <div class="container advanced-search">
+        <div class="row">
+          <div class="col-xl-12 mx-auto">
+            <h1 class="mb-5">Advanced Search</h1>
+          </div>
+        </div>
+          <form>
+            <div class="row">
+              <div class="col-6">
+              {{!-- row 1 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">City</h3>
+                </div>
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">
+                  <h3>-or-</h3>
+                </div>
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <h3 class="text-left">Zip Code</h3>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="City" id="advanced-city">
+                </div>
+                <div class="py-2 col-12 col-md-2">
+                </div>
+                <div class="py-2 col-12 col-md-5">
+                  <input type="text" class="form-control form-control-lg" placeholder="Zip Code" id="advanced-zip" maxlength="5">
+                </div>
+              </div>
+              {{!-- row 2 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Property Type</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-type">
+                    <option selected="selected" value="-1">Any</option>
+                    <option value="1">House</option>
+                    <option value="166">Apartment/Condo</option>
+                    <option value="1940">Fractional Ownership</option>
+                    <option value="168">Multi-Residential/Hotel</option>
+                    <option value="169">Commercial For Sale</option>
+                    <option value="173">Land</option>
+                    <option value="137">Rental House</option>
+                    <option value="167">Rental Apartment</option>
+                    <option value="802">Vacation Rental</option>
+                    <option value="170">Commercial For Lease</option>
+                    <option value="171">Business Opportunity</option>
+                    <option value="175">Other</option>
+                    <option value="2488">Land for rent</option>
+                    <option value="2519">Multi-Residential/Hotel for rent</option>
+                  </select>
+                </div>
+              </div>
+              {{!-- row 3 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Year Built</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="From" id="advanced-year-start" maxlength="4">
+                </div>
+                <div class="py-2 col-12 col-md-6">
+                  <input type="text" class="form-control form-control-lg" placeholder="To" id="advanced-year-end" maxlength="4">
+                </div>
+              </div>
+              {{!-- row 4 --}}
+              
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <h3 class="text-left">Bedrooms</h3>
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <h3 class="text-left">Bathrooms</h3>
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <h3 class="text-left">Garage</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-bedrooms">
+                    <option selected="selected" value="-1">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                    <option value="6">6+</option>
+                  </select>
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-bathrooms">
+                    <option selected="selected" value="-1">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                    <option value="6">6+</option>
+                  </select>
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-garages">
+                    <option selected="selected" value="-1">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                    <option value="6">6+</option>
+                    <option value="7">7+</option>
+                    <option value="8">8+</option>
+                    <option value="9">9+</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+              <div class="col-6">
+              {{!-- row 5 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Price</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-val">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-val">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-unit-val">
+                    <option selected="selected" value="490">USD</option>
+                    <option value="492">EUR</option>
+                    <option value="524">GBP</option>
+                    <option value="1948">MXN</option>
+                    <option value="1949">CAD</option>
+                    <option value="1953">ARS</option>
+                    <option value="1954">BZD</option>
+                    <option value="1955">BRL</option>
+                    <option value="1956">CLP</option>
+                    <option value="1957">CRC</option>
+                    <option value="1958">PEN</option>
+                    <option value="1959">VEF</option>
+                    <option value="1960">MAD</option>
+                    <option value="1961">ILS</option>
+                    <option value="1962">ZAR</option>
+                    <option value="1963">NZD</option>
+                    <option value="1964">AUD</option>
+                    <option value="1965">CHF</option>
+                    <option value="1966">DKK</option>
+                    <option value="1967">HUF</option>
+                    <option value="1968">NOK</option>
+                    <option value="1969">RUB</option>
+                    <option value="1970">SEK</option>
+                    <option value="1989">PHP</option>
+                    <option value="2332">INR</option>
+                    <option value="2333">CZK</option>
+                    <option value="2334">HKD</option>
+                    <option value="2335">PLN</option>
+                    <option value="2493">AED</option>
+                    <option value="2494">AFN</option>
+                    <option value="2495">BBD</option>
+                    <option value="2496">BMD</option>
+                    <option value="2497">BSD</option>
+                    <option value="2498">BWP</option>
+                    <option value="2499">CNY</option>
+                    <option value="2500">COP</option>
+                    <option value="2501">DOP</option>
+                    <option value="2502">ISK</option>
+                    <option value="2503">KES</option>
+                    <option value="2504">KYD</option>
+                    <option value="2505">MKD</option>
+                    <option value="2506">MYR</option>
+                    <option value="2507">PAB</option>
+                    <option value="2508">RWF</option>
+                    <option value="2509">SGD</option>
+                    <option value="2510">THB</option>
+                    <option value="2512">UGX</option>
+                    <option value="2513">UYU</option>
+                    <option value="2514">UZS</option>
+                    <option value="2515">VND</option>
+                    <option value="2516">VUV</option>
+                    <option value="2517">XCD</option>
+                    <option value="2518">ZWL</option>
+                    <option value="2975">XPF</option>
+                    <option value="2976">TRY</option>
+                    <option value="2989">IDR</option>
+                    <option value="2990">JPY</option>
+                    <option value="2992">BGN</option>
+                    <option value="2993">TWD</option>
+                    <option value="2994">KRW</option>
+                    <option value="2995">EGP</option>
+                    <option value="2996">RON</option>
+                    <option value="2997">SAR</option>
+                    <option value="2998">PKR</option>
+                    <option value="2999">IQD</option>
+                    <option value="3000">FJD</option>
+                    <option value="3001">KWD</option>
+                    <option value="3002">BAM</option>
+                    <option value="3003">HRK</option>
+                    <option value="3004">JMD</option>
+                    <option value="3005">JOD</option>
+                  </select>
+                </div>
+              </div>
+              {{!-- row 6 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                  <h3 class="text-left">Residence Size</h3>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-res-size">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-res-size">
+                </div>
+                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                  <h3 class="pt-3 text-center align-bottom">Unit</h3>
+                </div>
+              </div>
+              {{!-- row 7 --}}
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-8 mb-2 mb-md-0">
+                  <h3 class="text-left">Lot Size</h3>
+                </div>
+                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                  <select class="form-control form-control-lg" id="advanced-unit-size">
+                    <option value="1">ft²</option>
+                    <option value="2">m²</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-lot-size">
+                </div>
+                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-lot-size">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0"></div>
+                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0"></div>
+                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0"></div>
+                <div class="py-2 col-12 col-md-8">
+                  <button type="button" class="btn btn-block btn-lg btn-primary" id="advanced-search-button">Search!</button>
                 </div>
               </div>
             </form>
@@ -29,6 +452,11 @@
         </div>
       </div>
     </header>
+
+    {{!-- Search Modal --}}
+    <div class="modal" id="widget-modal" data-keyboard="true">
+      <iframe id="widget-iframe" src="http://widget.proxiopro.com/CRMLS/PropertyResult.aspx"></iframe>
+    </div>
 
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
@@ -134,10 +562,10 @@
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <div class="py-2 col-12 col-md-9 mb-2 mb-md-0">
                   <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
                 </div>
-                <div class="col-12 col-md-3">
+                <div class="py-2 col-12 col-md-3">
                   <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
                 </div>
               </div>
