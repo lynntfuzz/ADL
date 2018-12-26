@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/assets/css/contacts.css">
+
+<div class="container">
+  <h2>Contacts</h2>
+   <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+				<th>Info</th>
+				<th>Registered?</th>
+				<th>Date Created</th>
+      </tr>
+    </thead>
+	<tbody>
+		{{#if contact }}
+		{{#each contact}}
+			<tr>
+				<td>{{ this.name }}</td>
+				<td>{{ this.email }}</td> 
+				<td>{{ this.phone }}</td> 
+				<td>{{ this.info }}</td>
+				<td>{{ this.isRegistered }}</td>
+				<td>{{ dateformat this.createdAt "MM-DD-YYYY"}}</td>  
+			</tr>
+		{{/each}}
+		{{/if}}
+	</div>
+</div>
