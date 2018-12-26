@@ -37,7 +37,9 @@ $(document).ready(function() {
       username: username,
       password: password
     }).then(function(data) {
+      console.log("here " + data);
       window.location.replace(data);
+      //$.get("/contacts/contacts");
       // If there's an error, log the error
     }).catch(function(err) {
       $("#password-feedback").text("Incorrect Username or Password");

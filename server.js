@@ -7,6 +7,9 @@ const bodyParser     = require('body-parser');
 const session        = require('express-session'); 
 const passport 			 = require("./config/passport");
 const config				 = require("./config/extra-config");
+var flash            = require("connect-flash");
+var helpers          = require('handlebars-helpers')();
+
 // Express settings
 // ================
 
@@ -22,9 +25,11 @@ app.set('views', path.join(__dirname, 'views'));
 //set up handlebars
 const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+  helpers: require("./helpers/handlebars.js").helpers,
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+
 
 const isAuth 				 = require("./config/middleware/isAuthenticated");
 const authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
@@ -36,12 +41,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
-//app.use(passport.initialize());
-//app.use(passport.session());
-//app.use(authCheck);
-
-
+app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(authCheck);
+app.use(flash()); // Note: added this because exception was thrown when trying to
+// call isAuthenticated in routes/contacts.js I dont fully understand what is happening here. 
+// Need to study this.
 require('./routes')(app);
 
 // catch 404 and forward to error handler
