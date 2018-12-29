@@ -117,13 +117,21 @@ $(document).ready(function() {
   })
 
   $("#advanced-button").on("click", function(){
-    $("#advanced-city").val($("#basic-city").val())
-    $("#advanced-zip").val($("#basic-zip").val())
-    $("#advanced-min-val").val($("#basic-min-val").val())
-    $("#advanced-max-val").val($("#basic-max-val").val())
-    $("#advanced-unit-val").val($("#basic-unit-val").val())
-    $(".basic-search").hide("fast");  
-    $(".advanced-search").show("slow"); 
+    showAdvancedSearch();
   })
+
+  $(".home-search").on("click", function(){
+    showAdvancedSearch();
+  })
+
+  function showAdvancedSearch(){
+    $("#advanced-city").val($("#basic-city").val());
+    $("#advanced-zip").val($("#basic-zip").val());
+    $("#advanced-min-val").val($("#basic-min-val").val());
+    $("#advanced-max-val").val($("#basic-max-val").val());
+    $("#advanced-unit-val").val($("#basic-unit-val").val());
+    $(".basic-search").hide("fast");  
+    $(".advanced-search").show("slow");
+  }
 
 });
