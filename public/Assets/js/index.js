@@ -140,23 +140,63 @@ $(document).ready(function() {
 
   //Edit showcase sections
   $(".edit-button").on("click", function(){
+    if ($(this).text() != "Hide"){
+      $(this).text("Hide");
+    } else {
+      $(this).text("Edit Section");
+    }
     openEditSection($(this).data("number"));
   })
 
   function openEditSection(number){
-    $("#edit-section-"+number).show("slow");
+    $("#edit-section-"+number).toggle("slow");
     $("#edit-header-"+number).val($("#display-header-"+number).text())
     $("#edit-body-"+number).val($("#display-body-"+number).text())
   }
 
-  function readURL(input) {
+  $(".img-upload").change(function(){
+    var num = $(this).data("number")
+    readURL(this, num)
+  })
+
+  //prevent forms from being submit on Enter
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+  $(".discard-button").on("click", function(){
+    event.preventDefault();
+    location.reload();
+  })
+
+  $(".submit-button").on("click", function(){
+    event.preventDefault();
+    location.reload();
+  })
+
+  $(".edit-header").change(function(){
+    var number = $(this).data("number")
+    $("#display-header-"+number).text($("#edit-header-"+number).val());
+  })
+
+  $(".edit-body").change(function(){
+    var number = $(this).data("number")
+    $("#display-body-"+number).text($("#edit-body-"+number).val());
+  })
+
+  function readURL(input, number) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#img-edit-1')
+            $('#img-edit-'+number)
                 .attr('src', e.target.result)
                 .height(200);
+            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
+            console.log(e.target.result)
         };
 
         reader.readAsDataURL(input.files[0]);
