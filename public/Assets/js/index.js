@@ -25,13 +25,14 @@ $(document).ready(function() {
     }
   });
 
+  //default search parameters
   var parameters={
     id: '0', 
     AgentID: '0',
     OfficeID: "",
     CountryId: '1', // US
-    RegionId: "CA", // will be default to user location
-    RegionName: "California", // will be default to user location
+    RegionId: "CA", 
+    RegionName: "California", 
     CityId: '-1',
     CityName: "",
     PostCode: "",
@@ -55,6 +56,7 @@ $(document).ready(function() {
     OFFICE: ""
   }
 
+  //basic search
   $("#basic-search-button").on("click", function(){
     if ($("#basic-city").val()){
       parameters.CityName = $("#basic-city").val();
@@ -74,6 +76,7 @@ $(document).ready(function() {
     $("#widget-modal").modal("toggle");
   })
 
+  //advanced search
   $("#advanced-search-button").on("click", function(){
     if ($("#advanced-city").val()){
       parameters.CityName = $("#advanced-city").val();
@@ -117,13 +120,86 @@ $(document).ready(function() {
   })
 
   $("#advanced-button").on("click", function(){
-    $("#advanced-city").val($("#basic-city").val())
-    $("#advanced-zip").val($("#basic-zip").val())
-    $("#advanced-min-val").val($("#basic-min-val").val())
-    $("#advanced-max-val").val($("#basic-max-val").val())
-    $("#advanced-unit-val").val($("#basic-unit-val").val())
-    $(".basic-search").hide("fast");  
-    $(".advanced-search").show("slow"); 
+    showAdvancedSearch();
   })
 
+  $(".home-search").on("click", function(){
+    showAdvancedSearch();
+  })
+
+  //expands search form
+  function showAdvancedSearch(){
+    $("#advanced-city").val($("#basic-city").val());
+    $("#advanced-zip").val($("#basic-zip").val());
+    $("#advanced-min-val").val($("#basic-min-val").val());
+    $("#advanced-max-val").val($("#basic-max-val").val());
+    $("#advanced-unit-val").val($("#basic-unit-val").val());
+    $(".basic-search").hide("fast");  
+    $(".advanced-search").show("slow");
+  }
+
+  //Edit showcase sections
+  $(".edit-button").on("click", function(){
+    if ($(this).text() != "Hide"){
+      $(this).text("Hide");
+    } else {
+      $(this).text("Edit Section");
+    }
+    openEditSection($(this).data("number"));
+  })
+
+  function openEditSection(number){
+    $("#edit-section-"+number).toggle("slow");
+    $("#edit-header-"+number).val($("#display-header-"+number).text())
+    $("#edit-body-"+number).val($("#display-body-"+number).text())
+  }
+
+  $(".img-upload").change(function(){
+    var num = $(this).data("number")
+    readURL(this, num)
+  })
+
+  //prevent forms from being submit on Enter
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+  $(".discard-button").on("click", function(){
+    event.preventDefault();
+    location.reload();
+  })
+
+  $(".submit-button").on("click", function(){
+    event.preventDefault();
+    location.reload();
+  })
+
+  $(".edit-header").change(function(){
+    var number = $(this).data("number")
+    $("#display-header-"+number).text($("#edit-header-"+number).val());
+  })
+
+  $(".edit-body").change(function(){
+    var number = $(this).data("number")
+    $("#display-body-"+number).text($("#edit-body-"+number).val());
+  })
+
+  function readURL(input, number) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img-edit-'+number)
+                .attr('src', e.target.result)
+                .height(200);
+            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
+            console.log(e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
 });

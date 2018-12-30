@@ -27,3 +27,12 @@ iframe{
 .advanced-search{
   display: none;
 }
+
+.showcase-text-edit{
+  padding-top: 2rem !important;
+  border-top: 1px solid black;
+}
+
+.showcase-img-edit{
+  height: 300px;
+}
