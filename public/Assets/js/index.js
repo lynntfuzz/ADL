@@ -25,13 +25,14 @@ $(document).ready(function() {
     }
   });
 
+  //default search parameters
   var parameters={
     id: '0', 
     AgentID: '0',
     OfficeID: "",
     CountryId: '1', // US
-    RegionId: "CA", // will be default to user location
-    RegionName: "California", // will be default to user location
+    RegionId: "CA", 
+    RegionName: "California", 
     CityId: '-1',
     CityName: "",
     PostCode: "",
@@ -55,6 +56,7 @@ $(document).ready(function() {
     OFFICE: ""
   }
 
+  //basic search
   $("#basic-search-button").on("click", function(){
     if ($("#basic-city").val()){
       parameters.CityName = $("#basic-city").val();
@@ -74,6 +76,7 @@ $(document).ready(function() {
     $("#widget-modal").modal("toggle");
   })
 
+  //advanced search
   $("#advanced-search-button").on("click", function(){
     if ($("#advanced-city").val()){
       parameters.CityName = $("#advanced-city").val();
@@ -124,6 +127,7 @@ $(document).ready(function() {
     showAdvancedSearch();
   })
 
+  //expands search form
   function showAdvancedSearch(){
     $("#advanced-city").val($("#basic-city").val());
     $("#advanced-zip").val($("#basic-zip").val());
@@ -134,4 +138,28 @@ $(document).ready(function() {
     $(".advanced-search").show("slow");
   }
 
+  //Edit showcase sections
+  $(".edit-button").on("click", function(){
+    openEditSection($(this).data("number"));
+  })
+
+  function openEditSection(number){
+    $("#edit-section-"+number).show("slow");
+    $("#edit-header-"+number).val($("#display-header-"+number).text())
+    $("#edit-body-"+number).val($("#display-body-"+number).text())
+  }
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img-edit-1')
+                .attr('src', e.target.result)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
 });
