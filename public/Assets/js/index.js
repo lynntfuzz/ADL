@@ -8,7 +8,17 @@ var paramsToUrl = function(params, baseUrl = url) {
   return `${baseUrl}?${paramStr}`;
 }
 
+for (var i=1; i<=3; i++){
+  $.get("/cms/showcase/?id=" + i, function(data) {      
+    $("#display-header-"+data.id).text(data.header+"");
+    $("#display-body-"+data.id).text(data.body+"");
+    $("#img-display-"+data.id).css("background-image", "url("+data.image_path+")")
+    $("#img-display-"+data.id).data("src", data.image_path)
+  })
+};
+
 $(document).ready(function() {
+  
 
   //Changes navbar when scrolling
   $(window).scroll(function() {
@@ -60,6 +70,7 @@ $(document).ready(function() {
   $("#basic-search-button").on("click", function(){
     if ($("#basic-city").val()){
       parameters.CityName = $("#basic-city").val();
+      parameters.CityId = $("#basic-city").val();
     }
     if ($("#basic-zip").val()){
       parameters.PostCode = $("#basic-zip").val();
@@ -148,12 +159,14 @@ $(document).ready(function() {
     openEditSection($(this).data("number"));
   })
 
+  //display edit form for the given seciton
   function openEditSection(number){
     $("#edit-section-"+number).toggle("slow");
     $("#edit-header-"+number).val($("#display-header-"+number).text())
     $("#edit-body-"+number).val($("#display-body-"+number).text())
   }
 
+  //updates image when one is uploaded
   $(".img-upload").change(function(){
     var num = $(this).data("number")
     readURL(this, num)
@@ -167,26 +180,37 @@ $(document).ready(function() {
     }
   });
 
+  //reloads page and discards all changes
   $(".discard-button").on("click", function(){
     event.preventDefault();
     location.reload();
   })
 
+  //updates database with new section info
   $(".submit-button").on("click", function(){
     event.preventDefault();
-    location.reload();
+    var number = $(this).data("number")
+    var newShowcase = {
+      header: $("#edit-header-"+number).val(),
+      body: $("#edit-body-"+number).val(),
+      image_path: $("#img-display-"+number).data("src")
+    }
+
+    updateShowcase(newShowcase);
   })
 
-  $(".edit-header").change(function(){
+  //update header and body as they are modified
+  $(".edit-header").on("input", function(){
     var number = $(this).data("number")
     $("#display-header-"+number).text($("#edit-header-"+number).val());
   })
 
-  $(".edit-body").change(function(){
+  $(".edit-body").on("input", function(){
     var number = $(this).data("number")
     $("#display-body-"+number).text($("#edit-body-"+number).val());
   })
 
+  //interprets img upload
   function readURL(input, number) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -196,10 +220,22 @@ $(document).ready(function() {
                 .attr('src', e.target.result)
                 .height(200);
             $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
-            console.log(e.target.result)
+            $("#img-display-"+number).data("src", e.target.result)
         };
 
         reader.readAsDataURL(input.files[0]);
     }
+  }
+
+  //updates a showcase
+  function updateShowcase(edit) {
+    $.ajax({
+      method: "PUT",
+      url: "/cms/showcase",
+      data: edit
+    })
+      .then(function() {
+        window.location.href = "/";
+      });
   }
 });
