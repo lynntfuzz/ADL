@@ -148,12 +148,14 @@ $(document).ready(function() {
     openEditSection($(this).data("number"));
   })
 
+  //display edit form for the given seciton
   function openEditSection(number){
     $("#edit-section-"+number).toggle("slow");
     $("#edit-header-"+number).val($("#display-header-"+number).text())
     $("#edit-body-"+number).val($("#display-body-"+number).text())
   }
 
+  //updates image when one is uploaded
   $(".img-upload").change(function(){
     var num = $(this).data("number")
     readURL(this, num)
@@ -167,26 +169,30 @@ $(document).ready(function() {
     }
   });
 
+  //reloads page and discards all changes
   $(".discard-button").on("click", function(){
     event.preventDefault();
     location.reload();
   })
 
+  //updates database with new section info
   $(".submit-button").on("click", function(){
     event.preventDefault();
     location.reload();
   })
 
-  $(".edit-header").change(function(){
+  //update header and body as they are modified
+  $(".edit-header").on("input", function(){
     var number = $(this).data("number")
     $("#display-header-"+number).text($("#edit-header-"+number).val());
   })
 
-  $(".edit-body").change(function(){
+  $(".edit-body").on("input", function(){
     var number = $(this).data("number")
     $("#display-body-"+number).text($("#edit-body-"+number).val());
   })
 
+  //interprets img upload
   function readURL(input, number) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -195,8 +201,7 @@ $(document).ready(function() {
             $('#img-edit-'+number)
                 .attr('src', e.target.result)
                 .height(200);
-            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
-            console.log(e.target.result)
+            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")            
         };
 
         reader.readAsDataURL(input.files[0]);

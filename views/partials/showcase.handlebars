@@ -1,0 +1,141 @@
+<section class="showcase" id="about">
+      <div class="container-fluid p-0">
+        {{!-- section 1 --}}
+        <div class="row no-gutters">
+          
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" id="img-display-1" style="background-image: url('Assets/img/bg-showcase-1.jpg');"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            
+            <h2 id="display-header-1">Fully Responsive Design</h2>
+            <p class="lead mb-0" id="display-body-1">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+            {{#if isAuthenticated}}
+            <button class="float-right btn btn-primary edit-button" data-number="1">Edit Section</button>
+            {{/if}}
+          </div>
+        </div>
+        {{!-- edit 1 --}}
+        {{#if isAuthenticated}}
+        <div class="row no-gutters" id="edit-section-1" style="display:none">          
+          <div class="col-lg-6 order-lg-2 text-white showcase-img p-5">
+            <img src="Assets/img/bg-showcase-1.jpg" class="showcase-img-edit" id="img-edit-1">
+            <br>
+            <input class="img-upload" data-number="1" type="file" accept="image/*" style="color:black">
+          </div>
+          <div class="col-lg-6 order-lg-1 showcase-text showcase-text-edit">
+            <form id="edit-form-1">
+              <div class="form-row">
+                <h3>Header</h3>
+              </div>
+              <div class="form-row">
+                <input type="text" class="form-control edit-header" data-number="1" id="edit-header-1">
+              </div>
+              <div class="form-row">
+                <h3>Body</h3>
+              </div>
+              <div class="form-row">
+                <textarea rows="8" cols="110" id="edit-body-1" class="edit-body" data-number="1"></textarea>
+              </div>
+              <div class="form-row py-3">
+                <div class="col">
+                  <button class="btn btn-secondary btn-block btn-large discard-button">Discard Changes</button>
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary btn-block btn-large submit-button">Submit Changes</button>
+                </div>
+              </div>
+				    </form>
+          </div>
+        </div>
+        {{/if}}
+        {{!-- section 2 --}}
+        <div class="row no-gutters">
+          <div class="col-lg-6 text-white showcase-img" id="img-display-2" style="background-image: url('Assets/img/bg-showcase-2.jpg');"></div>
+          <div class="col-lg-6 my-auto showcase-text">
+            <h2 id="display-header-2">Updated For Bootstrap 4</h2>
+            <p class="lead mb-0" id="display-body-2">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+            {{#if isAuthenticated}}
+            <button class="float-right btn btn-primary edit-button" data-number="2">Edit Section</button>
+            {{/if}}
+          </div>
+        </div>
+        {{!-- edit 2 --}}
+        {{#if isAuthenticated}}
+        <div class="row no-gutters" id="edit-section-2" style="display:none">
+          <div class="col-lg-6 text-white showcase-img p-5">
+            <img src="Assets/img/bg-showcase-2.jpg" class="showcase-img-edit" id="img-edit-2">
+              <br>
+              <input class="img-upload" data-number="2" type="file" accept="image/*" style="color:black" onchange="readURL(this);">
+          </div>
+          <div class="col-lg-6 my-auto showcase-text showcase-text-edit">
+            <form id="edit-form-2">
+              <div class="form-row">
+                <h3>Header</h3>
+              </div>
+              <div class="form-row">
+                <input type="text" class="form-control edit-header" data-number="2" id="edit-header-2">
+              </div>
+              <div class="form-row">
+                <h3>Body</h3>
+              </div>
+              <div class="form-row">
+                <textarea rows="8" cols="110" id="edit-body-2" class="edit-body" data-number="2"></textarea>
+              </div>
+              <div class="form-row py-3">
+                <div class="col">
+                  <button class="btn btn-secondary btn-block btn-large discard-button">Discard Changes</button>
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary btn-block btn-large submit-button">Submit Changes</button>
+                </div>
+              </div>
+				    </form>
+          </div>
+        </div>
+        {{/if}}
+        {{!-- section 3 --}}
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" id="img-display-3" style="background-image: url('Assets/img/bg-showcase-3.jpg');"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2 id="display-header-3">Easy to Use &amp; Customize</h2>
+            <p class="lead mb-0" id="display-body-3">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+            {{#if isAuthenticated}}
+            <button class="float-right btn btn-primary edit-button" data-number="3">Edit Section</button>
+            {{/if}}
+          </div>
+        </div>
+        {{!-- edit 3 --}}
+        {{#if isAuthenticated}}
+        <div class="row no-gutters" id="edit-section-3" style="display:none">          
+          <div class="col-lg-6 order-lg-2 text-white showcase-img p-5">
+            <img src="Assets/img/bg-showcase-3.jpg" class="showcase-img-edit" id="img-edit-3">
+            <br>
+            <input class="img-upload" data-number="3" type="file" accept="image/*" style="color:black" onchange="readURL(this);">
+          </div>
+          <div class="col-lg-6 order-lg-1 showcase-text showcase-text-edit">
+            <form id="edit-form-3">
+              <div class="form-row">
+                <h3>Header</h3>
+              </div>
+              <div class="form-row">
+                <input type="text" class="form-control edit-header" data-number="3" id="edit-header-3">
+              </div>
+              <div class="form-row">
+                <h3>Body</h3>
+              </div>
+              <div class="form-row">
+                <textarea rows="8" cols="110" id="edit-body-3" class="edit-body" data-number="3"></textarea>
+              </div>
+              <div class="form-row py-3">
+                <div class="col">
+                  <button class="btn btn-secondary btn-block btn-large discard-button">Discard Changes</button>
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary btn-block btn-large submit-button">Submit Changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </section>
