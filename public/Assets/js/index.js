@@ -8,7 +8,17 @@ var paramsToUrl = function(params, baseUrl = url) {
   return `${baseUrl}?${paramStr}`;
 }
 
+for (var i=1; i<=3; i++){
+  $.get("/cms/showcase/?id=" + i, function(data) {      
+    $("#display-header-"+data.id).text(data.header+"");
+    $("#display-body-"+data.id).text(data.body+"");
+    $("#img-display-"+data.id).css("background-image", "url("+data.image_path+")")
+    $("#img-display-"+data.id).data("src", data.image_path)
+  })
+};
+
 $(document).ready(function() {
+  
 
   //Changes navbar when scrolling
   $(window).scroll(function() {
@@ -60,6 +70,7 @@ $(document).ready(function() {
   $("#basic-search-button").on("click", function(){
     if ($("#basic-city").val()){
       parameters.CityName = $("#basic-city").val();
+      parameters.CityId = $("#basic-city").val();
     }
     if ($("#basic-zip").val()){
       parameters.PostCode = $("#basic-zip").val();

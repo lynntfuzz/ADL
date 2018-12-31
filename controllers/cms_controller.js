@@ -3,7 +3,7 @@ var db  = require('../models');
 exports.findShowcase = function(req, res) {
     var id = req.query.id;
     console.log("id = " + id);
-    db.Showcase.findAll({
+    db.Showcase.findOne({
         where: {
           id: id
         }
