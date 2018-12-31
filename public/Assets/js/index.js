@@ -178,7 +178,14 @@ $(document).ready(function() {
   //updates database with new section info
   $(".submit-button").on("click", function(){
     event.preventDefault();
-    location.reload();
+    var number = $(this).data("number")
+    var newShowcase = {
+      header: $("#edit-header-"+number).val(),
+      body: $("#edit-body-"+number).val(),
+      image_path: $("#img-display-"+number).data("src")
+    }
+
+    updateShowcase(newShowcase);
   })
 
   //update header and body as they are modified
@@ -201,10 +208,23 @@ $(document).ready(function() {
             $('#img-edit-'+number)
                 .attr('src', e.target.result)
                 .height(200);
-            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")            
+            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
+            $("#img-display-"+number).data("src", e.target.result)
         };
 
         reader.readAsDataURL(input.files[0]);
     }
+  }
+
+  //updates a showcase
+  function updateShowcase(edit) {
+    $.ajax({
+      method: "PUT",
+      url: "/cms/showcase",
+      data: edit
+    })
+      .then(function() {
+        window.location.href = "/";
+      });
   }
 });
