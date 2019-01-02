@@ -2,6 +2,7 @@ var nameInput = $("#name");
 var emailInput = $("#email");
 var phoneInput = $("#phone");
 var infoInput = $("#info");
+var checkboxInput = $("#checkbox");
 
   // Username "on-the-fly" validation
   nameInput.bind('input propertychange', function() {
@@ -55,8 +56,11 @@ function submitContact(contact) {
 }
 
 function handleFormSubmit(event) {
+	var checkboxValue = false;
+	if (checkboxInput.is(":checked")){
+		checkboxValue = true;
+	}
 	event.preventDefault();
-console.log("Submit contact");
 	// Constructing a newContact object to hand to the database
 	var newContact = {
 	  name: nameInput
@@ -70,7 +74,8 @@ console.log("Submit contact");
 	  	.trim(),
 	  info: infoInput
 	  	.val()
-	  	.trim()
+			.trim(), 
+		receiveAlerts: checkboxValue
 	};
 	submitContact(newContact);
 	
