@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6]
+        len: [4]
       }
     },
     email: {
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true
     },
   
-    isRegistered: {
+    receiveAlerts: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
     }
