@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     image_path: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: 'placeholder.l'
+        defaultValue: 'placeholder.jpg'
     }
 });
   return Showcase;

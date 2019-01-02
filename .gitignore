@@ -63,3 +63,18 @@ typings/
 .next
 
 .DS_Store
+
+# images
+public/Assets/img/IMG_0512.png
+public/Assets/img/architecture-asphalt-avenue-1115866.jpg
+public/Assets/img/architecture-beautiful-blooming-1122857.jpg
+public/Assets/img/architecture-building-daylight-206172.jpg
+public/Assets/img/e945e0dad4b2977d5274a5c65906eec6
+public/Assets/img/halloween.jpg
+
+# config file
+config/config.json
+config.json
+
+.gitignore
+
