@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     // Need to figure out proper data type and validation for this field
