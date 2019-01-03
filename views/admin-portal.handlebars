@@ -1,6 +1,26 @@
-<link rel="stylesheet" href="/assets/css/contacts.css">
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/signup">Add Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/sign-out">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
- {{>all_contacts}}
- {{>all_searches}}
+    <div class="container" style="overflow:auto;">
+        {{>all_contacts}}
+    </div>
+    <div class="container" style="overflow:auto;">
+        {{>all_searches}}    
+    </div>
 </div>

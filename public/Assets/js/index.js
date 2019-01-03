@@ -68,7 +68,7 @@ $(document).ready(function() {
   }
 
   //admin table elements
-  var search;
+  var search = {};
 
   //basic search
   $("#basic-search-button").on("click", function(){
@@ -287,6 +287,11 @@ $(document).ready(function() {
   }
 
   function postSearch(query){
-    
+    $.post("/search", query, function() {
+    }).then(function(data) {
+      console.log(data);
+    }).catch(function(err) {
+      console.log(err);
+    });
   }
 });
