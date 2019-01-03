@@ -1,4 +1,4 @@
-let url = "http://widget.proxiopro.com/CRMLS/PropertyResult.aspx";
+let url = "https://widget.proxiopro.com/CRMLS/PropertyResult.aspx";
 
 var paramsToUrl = function(params, baseUrl = url) {
   let paramStr = Object.keys(params).map(function(val) {
@@ -12,9 +12,9 @@ for (var i=1; i<=3; i++){
   $.get("/cms/showcase/?id=" + i, function(data) {      
     $("#display-header-"+data.id).text(data.header+"");
     $("#display-body-"+data.id).text(data.body+"");
-    $("#img-display-"+data.id).css("background-image", "url(Assets/img/"+data.image_path+")");
+    $("#img-display-"+data.id).css("background-image", "url(assets/img/"+data.image_path+")");
     $("#img-display-"+data.id).data("src", data.image_path)
-    $("#img-edit-"+data.id).attr("src", "Assets/img/"+data.image_path);
+    $("#img-edit-"+data.id).attr("src", "assets/img/"+data.image_path);
   })
 };
 
