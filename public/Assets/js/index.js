@@ -224,8 +224,10 @@ $(document).ready(function() {
     var fd = new FormData();
     fd.append('header', $("#edit-header-"+number).val());
     fd.append('body', $("#edit-body-"+number).val());    
-    fd.append('image_path', $("#img-display-"+number).data('image_path') );
-    fd.append('file', $("#img-display-"+number).data('file'));
+    if ($("#img-display-"+number).data('image_path')) {
+      fd.append('image_path', $("#img-display-"+number).data('image_path') );
+      fd.append('file', $("#img-display-"+number).data('file'));
+    }
     fd.append('id', number);
     updateShowcase(fd);
   })
