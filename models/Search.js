@@ -5,98 +5,78 @@ module.exports = function(sequelize, DataTypes) {
 
     var Search = sequelize.define('Search', {
     
-        RegionId: {
-            type: DataTypes.STRING,
-            devaultValue: "CA"}, 
-        RegionName: {
-            type: DataTypes.STRING,
-            devaultValue:"California"
-        }, 
-        CityId: {
-            type: DataTypes.INTEGER,
-            devaultValue:'-1'},
+        // RegionId: {
+        //     type: DataTypes.STRING,
+        //     defaultValue: "CA"}, 
+        // RegionName: {
+        //     type: DataTypes.STRING,
+        //     defaultValue:"California"
+        // }, 
+        // CityId: {
+        //     type: DataTypes.INTEGER,
+        //     defaultValue:'-1'},
         CityName: {
             type: DataTypes.STRING,
-            devaultValue:""},
+            defaultValue:"n/a"},
         PostCode: {
             type: DataTypes.STRING,
-            devaultValue:""
+            defaultValue:"n/a"
         },
-        CurrencyId: {
-            type: DataTypes.INTEGER,
-            devaultValue:'490'}, // USD
+        Currency: {
+            type: DataTypes.STRING,
+            defaultValue:'USD'},
         GarageCount: {
             type: DataTypes.INTEGER,
-            devaultValue:'-1'
+            defaultValue:'0'
         },
         BedRoomCount: {
             type: DataTypes.INTEGER,
-            devaultValue:'-1'
+            defaultValue:'0'
         },
         BathRoomCount: {
             type: DataTypes.INTEGER,
-            devaultValue:'-1'
+            defaultValue:'0'
         },
         MinPrice: {
             type: DataTypes.INTEGER,
-            devaultValue:'0'
+            defaultValue:'0'
         },
         MaxPrice: {
-            type: DataTypes.INTEGER,
-            devaultValue:'0'
+            type: DataTypes.STRING,
+            defaultValue:'n/a'
         },
         YearBuilt: {
-            type: DataTypes.INTEGER,
-            devaultValue:'0'
+            type: DataTypes.STRING,
+            defaultValue:'n/a'
         },
         YearBuiltTo: {
-            type: DataTypes.INTEGER,
-            devaultValue:'0'
-        },
-        PriceOption: {
             type: DataTypes.STRING,
-            devaultValue:'down'
-        },
-        ClassId: {
-            type: DataTypes.INTEGER,
-            devaultValue:'-1'
+            defaultValue:'n/a'
+        },        
+        Type: {
+            type: DataTypes.STRING,
+            defaultValue:'Any'
         },
         LivingAreaFrom: {
             type: DataTypes.INTEGER,
-            devaultValue:'0'
+            defaultValue:'0'
         },
         LivingAreaTo: {
             type: DataTypes.INTEGER,
-            devaultValue:'0'
+            defaultValue:'0'
         },
         LandAreaFrom: {
             type: DataTypes.INTEGER,
-            devaultValue:'0'
+            defaultValue:'0'
         },
         LandAreaTo: {
             type: DataTypes.INTEGER,
-            devaultValue:'0'
+            defaultValue:'0'
         },
         AreaUnit: {
-            type: DataTypes.INTEGER,
-            devaultValue:'1'
-        },
-        lng: {
             type: DataTypes.STRING,
-            devaultValue:'en-US'
-        },
-        AGENT: {
-            type: DataTypes.STRING,
-            devaultValue:""
-        },
-        OFFICE: {
-            type: DataTypes.STRING,
-            devaultValue:""
-        },
-        user_id: {
-            type: DataTypes.STRING,
-            defaultValue: ""
-        }
+            defaultValue:'ft'
+        }        
     })
     return Search;
 };

@@ -12,10 +12,12 @@ exports.all_contacts = function(req, res) {
     //res.render('contacts/contacts');
   db.Contact.findAll({
   }).then(function(dbContacts) {
-    console.log(dbContacts);
-    res.render('contacts/all_contacts', {
-       layout: 'admin',
-       contact: dbContacts
+    db.Search.findAll({}).then(function(dbSearch){
+      res.render('admin-portal', {
+        layout: 'admin',
+        contact: dbContacts,
+        search: dbSearch
+      });
     });
   });
 };
