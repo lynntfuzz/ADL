@@ -284,6 +284,9 @@ $(document).ready(function() {
         $(".submit-button").prop('disabled', false);
       }
     });
+  }
 
-   }
+  function postSearch(query){
+    
+  }
 });
