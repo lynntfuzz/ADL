@@ -1,0 +1,41 @@
+  <h2>Searches</h2>
+   <table class="table table-hover">
+    <thead>
+      <tr>        
+        <th>City</th>
+        <th>Zip Code</th>
+				<th>Currency</th>
+				<th>Garage Count</th>
+				<th>Bedroom Count</th>
+				<th>Bathroom Count</th>
+				<th>Price Range</th>
+				<th>Years Built</th>
+				<th>Property Type</th>
+				<th>Residence Size</th>				
+				<th>Lot Size</th>				
+				<th>Unit</th>
+				<th>Date Searched</th>
+      </tr>
+    </thead>
+	<tbody>
+		{{#if search }}
+		{{#each search}}
+			<tr>
+				<td>{{ this.CityName }}</td>
+				<td>{{ this.PostCode }}</td>
+				<td>{{ this.Currency }}</td>
+				<td>{{ this.GarageCount }}+</td>
+				<td>{{ this.BedRoomCount }}+</td>
+				<td>{{ this.BathRoomCount }}+</td>
+				<td>{{ this.MinPrice }} - {{ this.MaxPrice }}</td>
+				<td>{{ this.YearBuilt }} - {{ this.YearBuiltTo }}</td>
+				<td>{{ this.Type }}</td>
+				<td>{{ this.LivingAreaFrom }} - {{ this.LivingAreaTo }}</td>
+				<td>{{ this.LandAreaFrom }} - {{ this.LandAreaTo }}</td>
+				<td>{{ this.AreaUnit }}²</td>
+				<td>{{ dateformat this.createdAt "MM-DD-YYYY"}}</td>  
+			</tr>
+		{{/each}}
+		{{/if}}
+		</tbody>
+		</table>

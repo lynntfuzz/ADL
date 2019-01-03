@@ -1,0 +1,27 @@
+<h2>Contacts</h2>
+	<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Message</th>
+			<th>Receive Alerts?</th>
+			<th>Date Created</th>
+		</tr>
+	</thead>
+<tbody>
+	{{#if contact }}
+	{{#each contact}}
+		<tr>
+			<td>{{ this.name }}</td>
+			<td>{{ this.email }}</td> 
+			<td>{{ this.phone }}</td> 
+			<td>{{ this.info }}</td>
+			<td>{{ this.receiveAlerts }}</td>
+			<td>{{ dateformat this.createdAt "MM-DD-YYYY"}}</td>  
+		</tr>
+	{{/each}}
+	{{/if}}
+	</tbody>
+	</table>
