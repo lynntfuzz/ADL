@@ -12,8 +12,9 @@ for (var i=1; i<=3; i++){
   $.get("/cms/showcase/?id=" + i, function(data) {      
     $("#display-header-"+data.id).text(data.header+"");
     $("#display-body-"+data.id).text(data.body+"");
-    $("#img-display-"+data.id).css("background-image", "url("+data.image_path+")")
+    $("#img-display-"+data.id).css("background-image", "url(Assets/img/"+data.image_path+")");
     $("#img-display-"+data.id).data("src", data.image_path)
+    $("#img-edit-"+data.id).attr("src", "Assets/img/"+data.image_path);
   })
 };
 
@@ -189,13 +190,14 @@ $(document).ready(function() {
   //display edit form for the given seciton
   function openEditSection(number){
     $("#edit-section-"+number).toggle("slow");
-    $("#edit-header-"+number).val($("#display-header-"+number).text())
-    $("#edit-body-"+number).val($("#display-body-"+number).text())
+    $("#edit-header-"+number).val($("#display-header-"+number).text());
+    $("#edit-body-"+number).val($("#display-body-"+number).text());
+    //$("#img-edit-"+number).data('src', $("#img-display-"+number).src());
   }
 
   //updates image when one is uploaded
   $(".img-upload").change(function(){
-    var num = $(this).data("number")
+    var num = $(this).data("number");
     readURL(this, num)
   })
 
@@ -216,14 +218,16 @@ $(document).ready(function() {
   //updates database with new section info
   $(".submit-button").on("click", function(){
     event.preventDefault();
-    var number = $(this).data("number")
-    var newShowcase = {
-      header: $("#edit-header-"+number).val(),
-      body: $("#edit-body-"+number).val(),
-      image_path: $("#img-display-"+number).data("src")
-    }
 
-    updateShowcase(newShowcase);
+    var number = $(this).data("number");
+
+    var fd = new FormData();
+    fd.append('header', $("#edit-header-"+number).val());
+    fd.append('body', $("#edit-body-"+number).val());    
+    fd.append('image_path', $("#img-display-"+number).data('image_path') );
+    fd.append('file', $("#img-display-"+number).data('file'));
+    fd.append('id', number);
+    updateShowcase(fd);
   })
 
   //update header and body as they are modified
@@ -246,8 +250,9 @@ $(document).ready(function() {
             $('#img-edit-'+number)
                 .attr('src', e.target.result)
                 .height(200);
-            $("#img-display-"+number).css("background-image", "url("+e.target.result+")")
-            $("#img-display-"+number).data("src", e.target.result)
+            $("#img-display-"+number).css("background-image", "url("+e.target.result+")");
+            $("#img-display-"+number).data("file", input.files[0]);
+            $("#img-display-"+number).data("image_path", input.files[0].name);
         };
 
         reader.readAsDataURL(input.files[0]);
@@ -256,17 +261,29 @@ $(document).ready(function() {
 
   //updates a showcase
   function updateShowcase(edit) {
+  
     $.ajax({
-      method: "PUT",
       url: "/cms/showcase",
-      data: edit
-    })
-      .then(function() {
-        window.location.href = "/";
-      });
-  }
+      data: edit,
+      processData: false,
+      contentType:  false ,
+      type: 'PUT',
+      beforeSend: function(data){
+        // disable button
+        $(".submit-button").prop('disabled', true);
+        // notify that file is uploading "File uploading..."
+      },
+      success: function(data){
+        $(".submit-button").prop('disabled', false);
+        $("#edit-section-"+edit.get('id')).toggle("slow");
+      },
+      error: function(err) {
+        // notify user somehow
+        // console.error(err)
+        // reenable button
+        $(".submit-button").prop('disabled', false);
+      }
+    });
 
-  function postSearch(query){
-    
-  }
+   }
 });
