@@ -45,7 +45,7 @@ function submitContact(contact) {
   $.post("/contacts", contact, function() {
       console.log(contact)
   }).then(function(data) {
-		alert("thank you for registering!");
+		alert("Your information has been received.");
 		nameInput.val("");
 		emailInput.val("");
 		phoneInput.val("");

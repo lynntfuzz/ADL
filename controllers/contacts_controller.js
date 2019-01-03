@@ -2,13 +2,17 @@ var db  = require('../models');
 
 exports.index = function(req, res) {
     console.log("contacts_controller.index");
-    db.Contact.findAll({ order: [['createdAt', 'DESC']]}).then(function(dbContacts) {
-      
-      res.render('contacts/all_contacts', {
-        layout: 'admin',
-        contact: dbContacts
+    db.Contact.findAll({ order: [['createdAt', 'DESC']]
+      }).then(function(dbContacts) {
+        db.Search.findAll({}).then(function(dbSearch){
+          res.render('admin-portal', {
+            layout: 'admin',
+            contact: dbContacts,
+            search: dbSearch
+          });
+        });
       });
-    });
+    
 };
 
 exports.createContact = function(req, res) {

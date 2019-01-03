@@ -67,68 +67,95 @@ $(document).ready(function() {
     OFFICE: ""
   }
 
+  //admin table elements
+  var search = {};
+
   //basic search
   $("#basic-search-button").on("click", function(){
     if ($("#basic-city").val()){
+      search.CityName = $("#basic-city").val();
       parameters.CityName = $("#basic-city").val();
       parameters.CityId = $("#basic-city").val();
     }
     if ($("#basic-zip").val()){
+      search.PostCode = $("#basic-zip").val();
       parameters.PostCode = $("#basic-zip").val();
     }
     if ($("#basic-min-val").val()){
+      search.MinPrice = $("#basic-min-val").val();
       parameters.MinPrice = $("#basic-min-val").val();
     }
     if ($("#basic-max-val").val()){
+      search.MaxPrice = $("#basic-max-val").val();
       parameters.MaxPrice = $("#basic-max-val").val();
     }
-    parameters.CurrencyId = $("#basic-unit-val").val();    
+    search.Currency = $("#basic-unit-val").find(':selected').data('label')
+    parameters.CurrencyId = $("#basic-unit-val").val();
     var url = paramsToUrl(parameters);
-    $("#widget-iframe").attr("src", url);    
+    $("#widget-iframe").attr("src", url);
     $("#widget-modal").modal("toggle");
+    postSearch(search);
   })
 
   //advanced search
   $("#advanced-search-button").on("click", function(){
     if ($("#advanced-city").val()){
+      search.CityName = $("#advanced-city").val();
       parameters.CityName = $("#advanced-city").val();
+      parameters.CityId = $("#advanced-city").val();
     }
     if ($("#advanced-zip").val()){
+      search.PostCode = $("#advanced-zip").val();
       parameters.PostCode = $("#advanced-zip").val();
     }
-    parameters.ClassId=$("#advanced-type").val()
+    search.Type = $("#advanced-type").find(":selected").data("label");
+    parameters.ClassId=$("#advanced-type").val();
     if ($("#advanced-year-start").val()){
+      search.YearBuilt = $("#advanced-year-start").val();
       parameters.YearBuilt = $("#advanced-year-start").val();
     }
     if ($("#advanced-year-end").val()){
+      search.YearBuiltTo = $("#advanced-year-end").val();
       parameters.YearBuiltTo = $("#advanced-year-end").val();
     }
+    search.BedRoomCount = $("#advanced-bedrooms").val();
     parameters.BedRoomCount = $("#advanced-bedrooms").val();
+    search.BathRoomCount = $("#advanced-bathrooms").val();
     parameters.BathRoomCount = $("#advanced-bathrooms").val();
+    search.GarageCount = $("#advanced-garages").val();
     parameters.GarageCount = $("#advanced-garages").val();
     if ($("#advanced-min-val").val()){
+      search.MinPrice = $("#advanced-min-val").val();
       parameters.MinPrice = $("#advanced-min-val").val();
     }
     if ($("#advanced-max-val").val()){
+      search.MaxPrice = $("#advanced-max-val").val();
       parameters.MaxPrice = $("#advanced-max-val").val();
     }
+    search.Currency = $("#advanced-unit-val").find(':selected').data('label')
     parameters.CurrencyId = $("#advanced-unit-val").val();
     if ($("#advanced-max-val").val()){
+      search.LivingAreaFrom = $("#advanced-min-res-size").val();
       parameters.LivingAreaFrom = $("#advanced-min-res-size").val();
     }
     if ($("#advanced-max-val").val()){
+      search.LivingAreaTo = $("#advanced-max-res-size").val();
       parameters.LivingAreaTo = $("#advanced-max-res-size").val();
     }
     if ($("#advanced-max-val").val()){
+      search.LandAreaFrom = $("#advanced-min-lot-size").val();
       parameters.LandAreaFrom = $("#advanced-min-lot-size").val();
     }
     if ($("#advanced-max-val").val()){
+      search.LandAreaTo = $("#advanced-max-lot-size").val();
       parameters.LandAreaTo = $("#advanced-max-lot-size").val();
     }
+    search.AreaUnit = $("#advanced-unit-size").find(':selected').data('label')
     parameters.AreaUnit = $("#advanced-unit-size").val();    
-    var url = paramsToUrl(parameters);
+    var url = paramsToUrl(parameters);    
     $("#widget-iframe").attr("src", url);    
     $("#widget-modal").modal("toggle");
+    postSearch(search);
   })
 
   $("#advanced-button").on("click", function(){
@@ -257,6 +284,14 @@ $(document).ready(function() {
         $(".submit-button").prop('disabled', false);
       }
     });
+  }
 
-   }
+  function postSearch(query){
+    $.post("/search", query, function() {
+    }).then(function(data) {
+      console.log(data);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
 });
