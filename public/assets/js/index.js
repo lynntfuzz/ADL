@@ -19,7 +19,6 @@ for (var i=1; i<=3; i++){
 };
 
 $(document).ready(function() {
-  
 
   //Changes navbar when scrolling
   $(window).scroll(function() {

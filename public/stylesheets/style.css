@@ -22,6 +22,9 @@ iframe{
   width:100%;
   height: 828px;
   border: none;
+  background: url("../assets/img/lg.wave-ball-preloader.gif");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .advanced-search{
