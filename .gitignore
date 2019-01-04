@@ -63,6 +63,7 @@ typings/
 .next
 
 .DS_Store
+**/.DS_Store
 
 # images
 public/Assets/img/IMG_0512.png
