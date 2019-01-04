@@ -8,10 +8,6 @@ var contacts_controller = require('../controllers/contacts_controller');
 
 router.get('/contacts', isAuthenticated, contacts_controller.index);
 
-router.get('/form', function(req, res, next) {
-    res.render('contacts/contacts');
-  });
-
 /* Post new contact. */
 router.post('/', contacts_controller.createContact);
 

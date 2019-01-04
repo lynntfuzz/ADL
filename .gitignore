@@ -63,6 +63,7 @@ typings/
 .next
 
 .DS_Store
+**/.DS_Store
 
 # images
 public/Assets/img/IMG_0512.png
@@ -78,5 +79,4 @@ public/Assets/img/IMG_4683.jpg
 config/config.json
 config.json
 
-.gitignore
 
