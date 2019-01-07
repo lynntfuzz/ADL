@@ -9,41 +9,41 @@
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-2 col-md-5 mb-2 mb-md-0">
                   <h3 class="text-left">City</h3>
                 </div>
-                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">
+                <div class="py-2 col-3 col-md-2 mb-2 mb-md-0">
                   <h3>-or-</h3>
                 </div>
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-5 col-md-4 mb-2 mb-md-0">
                   <h3 class="text-left">Zip Code</h3>
                 </div>
               </div>
 
               <div class="form-row">
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-md-5 mb-2 mb-md-0">
                   <input type="text" class="form-control form-control-lg" placeholder="City" id="basic-city">
                 </div>
-                <div class="py-2 col-12 col-md-2">
+                <div class="py-2 col-md-2">
                 </div>
-                <div class="py-2 col-12 col-md-5">
+                <div class="py-2 col-md-5">
                   <input type="text" class="form-control form-control-lg" placeholder="Zip Code" id="basic-zip" maxlength="5">
                 </div>
               </div>
               
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <h3 class="text-left">Price</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Min" id="basic-min-val">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Max" id="basic-max-val">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <select class="form-control form-control-lg" id="basic-unit-val">
                     <option selected="selected" value="490" data-label="USD">USD</option>
                     <option value="492" data-label="EUR">EUR</option>
@@ -120,11 +120,11 @@
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0"></div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-2 mb-2 mb-md-0"></div>
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <button type="button" class="btn btn-block btn-lg" id="advanced-button">Advanced Search</button>
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <button type="button" class="btn btn-block btn-lg btn-primary" id="basic-search-button">Search!</button>
                 </div>
               </div>
@@ -136,43 +136,43 @@
       <div class="container advanced-search">
         <div class="row">
           <div class="col-xl-12 mx-auto">
-            <h1 class="mb-5">Advanced Search</h1>
+            <h1 class="mb-5">Advanced Home Search</h1>
           </div>
         </div>
           <form>
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
               {{!-- row 1 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-2 col-md-4 mb-2 mb-md-0">
                   <h3 class="text-left">City</h3>
                 </div>
-                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0">
+                <div class="py-2 col-3 col-md-3 mb-2 mb-md-0">
                   <h3>-or-</h3>
                 </div>
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-5 col-md-5 mb-2 mb-md-0">
                   <h3 class="text-left">Zip Code</h3>
                 </div>
               </div>
 
               <div class="form-row">
-                <div class="py-2 col-12 col-md-5 mb-2 mb-md-0">
+                <div class="py-2 col-md-5 mb-2 mb-md-0">
                   <input type="text" class="form-control form-control-lg" placeholder="City" id="advanced-city">
                 </div>
-                <div class="py-2 col-12 col-md-2">
+                <div class="py-2 col-md-2">
                 </div>
-                <div class="py-2 col-12 col-md-5">
+                <div class="py-2 col-md-5">
                   <input type="text" class="form-control form-control-lg" placeholder="Zip Code" id="advanced-zip" maxlength="5">
                 </div>
               </div>
               {{!-- row 2 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <h3 class="text-left">Property Type</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <select class="form-control form-control-lg" id="advanced-type">
                     <option selected="selected" value="-1" data-label="Any">Any</option>
                     <option value="1" data-label="House">House</option>
@@ -194,33 +194,33 @@
               </div>
               {{!-- row 3 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <h3 class="text-left">Year Built</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-6 mb-2 mb-md-0">
+                <div class="py-2 col-md-6 mb-2 mb-md-0">
                   <input type="text" class="form-control form-control-lg" placeholder="From" id="advanced-year-start" maxlength="4">
                 </div>
-                <div class="py-2 col-12 col-md-6">
+                <div class="py-2 col-md-6">
                   <input type="text" class="form-control form-control-lg" placeholder="To" id="advanced-year-end" maxlength="4">
                 </div>
               </div>
               {{!-- row 4 --}}
               
               <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
-                  <h3 class="text-left">Bedrooms</h3>
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-1 order-md-1">
+                  <h3 class="text-left">Bed</h3>
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
-                  <h3 class="text-left">Bathrooms</h3>
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-3 order-md-1">
+                  <h3 class="text-left">Bath</h3>
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-5 order-md-1">
                   <h3 class="text-left">Garage</h3>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+              {{!-- </div>
+              <div class="form-row"> --}}
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-2 order-md-1">
                   <select class="form-control form-control-lg" id="advanced-bedrooms">
                     <option selected="selected" value="-1">Any</option>
                     <option value="1">1+</option>
@@ -231,7 +231,7 @@
                     <option value="6">6+</option>
                   </select>
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-4 order-md-1">
                   <select class="form-control form-control-lg" id="advanced-bathrooms">
                     <option selected="selected" value="-1">Any</option>
                     <option value="1">1+</option>
@@ -242,7 +242,7 @@
                     <option value="6">6+</option>
                   </select>
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0 order-6 order-md-1">
                   <select class="form-control form-control-lg" id="advanced-garages">
                     <option selected="selected" value="-1">Any</option>
                     <option value="1">1+</option>
@@ -258,21 +258,21 @@
                 </div>
               </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
               {{!-- row 5 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <h3 class="text-left">Price</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-val">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-val">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-4 mb-2 mb-md-0">
                   <select class="form-control form-control-lg" id="advanced-unit-val">
                     <option selected="selected" value="490" data-label="USD">USD</option>
                     <option value="492" data-label="EUR">EUR</option>
@@ -350,46 +350,46 @@
               </div>
               {{!-- row 6 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0">
+                <div class="py-2 col-md-12 mb-2 mb-md-0">
                   <h3 class="text-left">Residence Size</h3>
                 </div>
               </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-6 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-res-size">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-6 mb-2 mb-md-0">
                   <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-res-size">
-                </div>
-                <div class="col-12 col-md-4 mb-2 mb-md-0">
-                  <h3 class="pt-3 text-center align-bottom">Unit</h3>
-                </div>
+                </div>                
               </div>
               {{!-- row 7 --}}
               <div class="form-row">
-                <div class="py-2 col-12 col-md-8 mb-2 mb-md-0">
+                <div class="py-2 col-md-8 mb-2 mb-md-0">
                   <h3 class="text-left">Lot Size</h3>
+                </div>                
+              </div>
+              <div class="form-row">
+                <div class="py-2 col-md-6 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-lot-size">
                 </div>
-                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div class="py-2 col-md-6 mb-2 mb-md-0">
+                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-lot-size">
+                </div>
+              </div>
+              <div class="form-row">
+              <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <h3 class="py-2 text-left">Unit</h3>
+                </div>
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
                   <select class="form-control form-control-lg" id="advanced-unit-size">
                     <option value="1" data-label="ft">ft²</option>
                     <option value="2" data-label="m">m²</option>
                   </select>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
-                  <input type="number" class="form-control form-control-lg" placeholder="Min" id="advanced-min-lot-size">
                 </div>
-                <div class="py-2 col-12 col-md-4 mb-2 mb-md-0">
-                  <input type="number" class="form-control form-control-lg" placeholder="Max" id="advanced-max-lot-size">
-                </div>
-              </div>
               <div class="form-row">
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0"></div>
-                <div class="py-2 col-12 col-md-12 mb-2 mb-md-0"></div>
-                <div class="py-2 col-12 col-md-2 mb-2 mb-md-0"></div>
-                <div class="py-2 col-12 col-md-8">
+                {{!-- <div class="py-2 col-md-2 mb-2 mb-md-0"></div> --}}
+                <div class="py-2 col-md-12">
                   <button type="button" class="btn btn-block btn-lg btn-primary" id="advanced-search-button">Search!</button>
                 </div>
               </div>
